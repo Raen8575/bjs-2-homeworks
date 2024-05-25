@@ -72,12 +72,32 @@ class Library {
             this.books.push(book);
         }
     }
-
+/*    findBookBy(type, value) {
+        for(let i = 0; i < this.books.length; i++) {
+            let book = this.books[i];
+            if(book[type] === value) {
+                return book;
+            }
+        }
+        return null;
+    }*/
     findBookBy(type, value) {
         const findResult = this.books.find((item) => item[type] === value);
         return findResult || null;
     }
-
+/*    giveBookByName(bookName) {
+       let book = this.findBookBy("name", bookName);
+       if(book != null) {
+        let index = this.books.indexOf(book);
+        if (index >= 0) {
+            this.books.splice(index, 1);
+        }
+        return book;
+       }
+       else {
+        return null;
+       }
+    }*/
     giveBookByName(bookName) {
         const findResult = this.books.find((item) => item.name === bookName);
         this.books = this.books.filter((item) => item.name !== bookName);
